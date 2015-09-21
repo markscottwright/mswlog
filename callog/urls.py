@@ -1,6 +1,8 @@
 from django.conf.urls import url, include
 import django.contrib.auth
+from .views import overview, user_info
 
 urlpatterns = [
-    url('^', include('django.contrib.auth.urls'))
+    url('^$', overview),
+    url('^info$', user_info),
 ]
