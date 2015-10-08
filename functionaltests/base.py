@@ -6,6 +6,8 @@ import time
 
 class FunctionalTest(StaticLiveServerTestCase):
 
+    SELENIUM_PROFILE = r'C:\Users\wrightm\AppData\Roaming\mozilla\firefox\profiles\o0a8hsna.selenium'
+
     @classmethod
     def setUpClass(cls):
         for arg in sys.argv:
@@ -21,7 +23,9 @@ class FunctionalTest(StaticLiveServerTestCase):
             super().tearDownClass()
 
     def setUp(self):
-        self.browser = webdriver.Firefox()
+        profile = webdriver.firefox.firefox_profile.FirefoxProfile(
+            self.SELENIUM_PROFILE)
+        self.browser = webdriver.Firefox(profile)
         self.browser.implicitly_wait(3)
 
     def closeBrowser(self):
