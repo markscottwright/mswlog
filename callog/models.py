@@ -1,3 +1,7 @@
 from django.db import models
+from django.utils import timezone
 
-# Create your models here.
+
+class WeighIn(models.Model):
+    date = models.DateField(default=timezone.now)
+    pounds = models.FloatField(default=0)

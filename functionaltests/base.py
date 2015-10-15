@@ -6,7 +6,9 @@ import time
 
 class FunctionalTest(StaticLiveServerTestCase):
 
-    SELENIUM_PROFILE = r'C:\Users\wrightm\AppData\Roaming\mozilla\firefox\profiles\o0a8hsna.selenium'
+    SELENIUM_PROFILE = \
+        r'C:\Users\wrightm\AppData\Roaming\mozilla\firefox\profiles' + \
+        r'\o0a8hsna.selenium'
 
     @classmethod
     def setUpClass(cls):

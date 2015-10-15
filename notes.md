@@ -1,19 +1,7 @@
-# Views
+# Todo
 
--   dap
-    -   Day/Visit
-    -   Day/Visit
--   day
-    -   Visit
--   visit
-    -   Title
-    -   Start Time
-    -   Address
-    -   pictures
-    -   wine notes
--   picture
-    -   who
-    -   when
-    -   visit
--   wine notes
-
+-   Fix accouts/login redirect
+-   Try out other password views
+-   Enter food
+-   Enter exercise
+-   Eatwatch graph
