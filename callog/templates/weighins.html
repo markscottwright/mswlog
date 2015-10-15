@@ -3,13 +3,17 @@
 
 {% block content %}
 
-    {% bootstrap_messages %}
-    <form method="post" action="/callog/weighins" class="form-horizontal">
-        {% csrf_token %}
-        {% bootstrap_form form %}
-        {% buttons submit="Add Weight" %}
-        {% endbuttons %}
-    </form>
+    <div class="jumbotron">
+        <h1 class="text-center">What do you weigh today?</h1>
+        {% bootstrap_messages %}
+        <form method="post" action="/callog/weighins"
+                class="form-horizontal">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            {% buttons submit="Weigh In" %}
+            {% endbuttons %}
+        </form>
+    </div>
 
     <table class="table table-striped table-condensed">
         <thead>

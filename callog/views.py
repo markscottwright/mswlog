@@ -19,12 +19,14 @@ def weigh_ins(request):
     if request.method == 'POST':
         form = WeighInForm(request.POST)
         if form.is_valid():
-            form.save()
+            weigh_in = form.save(commit=False)
+            weigh_in.user = request.user
+            weigh_in.save()
             return HttpResponseRedirect("/callog/weighins")
     else:
         form = WeighInForm()
 
-    weigh_in_entries = WeighIn.objects.all()
+    weigh_in_entries = WeighIn.objects.filter(user=request.user)
     return render(
         request, 'weighins.html', {
             'weigh_ins': weigh_in_entries,
